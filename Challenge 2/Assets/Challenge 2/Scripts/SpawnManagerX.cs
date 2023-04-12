@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
-{
+{ //to spawn the balls into the frame 
     public GameObject[] ballPrefabs;
 
     private float spawnLimitXLeft = -22;
@@ -23,10 +23,13 @@ public class SpawnManagerX : MonoBehaviour
     void SpawnRandomBall ()
     {
         // Generate random ball index and random spawn position
+        int index = Random.Range(0, ballPrefabs.Length);
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
 
+        spawnInterval = Random.Range(2, 4);
+
         // instantiate ball at random spawn location
-        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[0].transform.rotation);
+        Instantiate(ballPrefabs[index], spawnPos, ballPrefabs[index].transform.rotation);
     }
 
 }

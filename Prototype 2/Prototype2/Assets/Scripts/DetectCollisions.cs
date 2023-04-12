@@ -20,6 +20,18 @@ public class DetectCollisions : MonoBehaviour
     {
         Destroy(gameObject);
         Destroy(other.gameObject);
+        /*if (other.CompareTag("Player"))
+        {
+            Debug.Log("Game Over");
+            Destroy(gameObject);
+            
+        }
+        else
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }*/
+
     }
 
 }
